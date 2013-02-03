@@ -1,0 +1,21 @@
+<h1>Listing Books</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Number of Pages</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% books.each(function(book){ %>
+    <tr>
+      <td><%= book.get('title') %></td>
+      <td><%= book.get('num_pages') %></td>
+      <td><a href="books/<%= book.id %>">Show</a></td>
+      <td><a href="books/<%= book.id %>/edit">Edit</a></td>
+      <td><a href="#" data-method="delete" data-id="<%= book.id %>">Destroy</a></td>
+    </tr>
+  <% }); %>
+</table>
+<a href="/books/new">New Book</a>
