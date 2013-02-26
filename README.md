@@ -35,7 +35,7 @@ The Backbone.js application resides in ```app/assets/javascripts```. ```applicat
 
 The Rails App: ```rails s```
 
-The Node App (from the railtime folder): ```node realtime-server.js```
+The Node App (from the realtime folder): ```node realtime-server.js```
 
 
 # Done
