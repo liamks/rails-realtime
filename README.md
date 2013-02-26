@@ -15,7 +15,7 @@ rails generate scaffold Book title:string num_pages:integer
 rake db:migrate
 ```
 
-Add ```gem 'redis'``` to Gemfile, then run ```bundle install```.
+Add ```gem 'redis'``` and ```gem 'pg'``` to the Gemfile, then run ```bundle install```.
 
 ### Creating The Node.js App
 
@@ -29,7 +29,7 @@ Then create ```package.json``` (see ```realtime/package.json``` for reference). 
 
 ### The Backbone.js App
 
-The Backbone.js application resides in ```app/assets/javascripts```. ```application.js``` specificies the javascript files that comprise the web application and their load order. If you're building a real production app you may want to look into Require.js to manage your dependencies. ```app.js.coffee``` is the starting point for the Backbone.js application.
+The Backbone.js application resides in ```app/assets/javascripts```. ```application.js``` specificies the javascript files that comprise the web application and their load order. If you're building a real production app you may want to look into http://requirejs.org/ to manage your dependencies. ```app.js.coffee``` is the starting point for the Backbone.js application.
 
 ## To Start The App
 
