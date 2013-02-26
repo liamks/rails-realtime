@@ -1,10 +1,10 @@
 # Adding Real-Time To Your RESTful Rails App
 
-This repository contains the code for both the Rails app, and the Node app, that accompanies the blog entry ("Adding Real-Time To Your RESTful Rails App")[blog/2013/02/27/adding-real-time-to-a-restful-rails-app/]
+This repository contains the code for both the Rails app, and the Node app, that accompanies the blog entry ["Adding Real-Time To Your RESTful Rails App"](http://liamkaufman.com/blog/2013/02/27/adding-real-time-to-a-restful-rails-app/).
 
 ## Steps I Took
 
-Below are some of the steps I took, that were not outlined in the above blog entry.
+Below are some of the steps I took, that were not outlined in the above blog entry. Make sure you have Redis installed and running!
 
 ```
 rails new rails_realtime --database=postgresql
@@ -25,7 +25,13 @@ cd realtime
 echo 'Real-Time' > README.md
 ```
 
-Then create package.json (see realtime/package.json for reference), then from the realtime directory run ```npm install```. In your Rails' .gitignore file add ```/realtime/node_modules``` to ignore the installed node modules.
+Then create ```package.json``` (see ```realtime/package.json``` for reference). From the realtime directory run ```npm install```. In your Rails' ```.gitignore``` file add ```/realtime/node_modules``` to ignore the installed node modules.
+
+## To Start The App
+
+The Rails App: ```rails s```
+
+The Node App (from the railtime forlder): ```node realtime-server.js```
 
 
 # Done
