@@ -5,6 +5,8 @@ window.app =
   routers : {}
   navigate : new Backbone.Router().navigate
 
+_.extend window.app, Backbone.Events
+
 $.ajaxSetup
   headers : 
     'X-CSRF-Token' : $('meta[name=csrf-token]').attr('content')

@@ -19,7 +19,7 @@ app.views.books.Form = Backbone.View.extend
     @model.save @formValues(),
         success : () =>
           if @isNew
-            app.books.add @model
+            app.collections.books.add @model
 
           @clear()
           app.navigate '/books/', true

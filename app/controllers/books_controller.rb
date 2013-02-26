@@ -1,6 +1,5 @@
 class BooksController < ApplicationController
 
-  before_filter :get_channel
   # GET /books
   # GET /books.json
   def index
@@ -51,7 +50,6 @@ class BooksController < ApplicationController
 
     respond_to do |format|
       if @book.save
-        $redis.publish @channel, @book.to_json
         format.html { redirect_to @book, notice: 'Book was successfully created.' }
         format.json { render json: @book, status: :created, location: @book }
       else
@@ -68,7 +66,6 @@ class BooksController < ApplicationController
 
     respond_to do |format|
       if @book.update_attributes(params[:book])
-        $redis.publish @channel, @book.to_json
         format.html { redirect_to @book, notice: 'Book was successfully updated.' }
         format.json { render json: @book }
       else
@@ -83,7 +80,6 @@ class BooksController < ApplicationController
   def destroy
     @book = Book.find(params[:id])
     @book.destroy
-    $redis.publish @channel, @book.to_json
     
     respond_to do |format|
       format.html { redirect_to books_url }
@@ -92,9 +88,5 @@ class BooksController < ApplicationController
   end
 
 
-  private
 
-  def get_channel
-    @channel = request.request_method + ":" + request.fullpath
-  end
 end
