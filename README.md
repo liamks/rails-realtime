@@ -27,11 +27,15 @@ echo 'Real-Time' > README.md
 
 Then create ```package.json``` (see ```realtime/package.json``` for reference). From the realtime directory run ```npm install```. In your Rails' ```.gitignore``` file add ```/realtime/node_modules``` to ignore the installed node modules.
 
+### The Backbone.js App
+
+The Backbone.js application resides in ```app/assets/javascripts```. ```application.js``` specificies the javascript files that comprise the web application and their load order. If you're building a real production app you may want to look into Require.js to manage your dependencies. ```app.js.coffee``` is the starting point for the Backbone.js application.
+
 ## To Start The App
 
 The Rails App: ```rails s```
 
-The Node App (from the railtime forlder): ```node realtime-server.js```
+The Node App (from the railtime folder): ```node realtime-server.js```
 
 
 # Done
