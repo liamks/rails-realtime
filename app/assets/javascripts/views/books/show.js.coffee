@@ -8,8 +8,8 @@ app.views.books.Show = Backbone.View.extend
   template : JST['templates/books/show']
 
   serialize : ->
-    @model.toJSON()
+    @model.toJSON() if @model
 
   render : ->
-    @$el.html @template(@serialize())
+    @$el.html @template(@serialize()) if @model
     @$el
